@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CS com Axios</title>
+
+    <!-- Imports -->
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap-icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- Biblioteca JS -->
+    <script src="newfunc.js"></script>
+
+    <!-- CSS -->
+    <style>
+        #conteudo {
+            width: 89%;
+        }
+
+        #clogin {
+            padding: 2% 4%;
+            box-shadow: 2px 2px 5px #888888;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 10vh;
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu -->
+    <nav id="menu" class="navbar navbar-expand-lg navbar-dark bg-dark"></nav>
+
+    <!-- Conteudo -->
+    <main class="container-fluid mw-100">
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" id="btn-modal-Log" hidden data-bs-toggle="modal"
+            href="#modalLogin">
+        </button>
+
+        <button type="button" class="btn btn-primary" id="btn-modal-Reg" hidden data-bs-toggle="modal"
+            href="#modalRegisto">
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalLogin" data-bs-backdrop="static" aria-hidden="true"
+            aria-labelledby="modalLoginLabel" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLoginLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLoginLabel">Login</h5>
+                        <button type="button" id="close-L" hidden class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="mb-0 pb-0">
+                            <div class="mb-3">
+                                <label for="inputEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="inputEmail" required
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-2">
+                                <label for="inputPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" required id="inputPassword">
+                            </div>
+                            <p class="text-center mb-0 pb-0">Para fazer registo,<a onclick="changeModal('modalLogin')"
+                                    class="btn btn-link">Clique aqui</a></p>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" onclick="login()">Entrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRegisto" data-bs-backdrop="static" aria-hidden="true"
+            aria-labelledby="modalRegistoLabel" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="modalRegistoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalRegistoLabel">Registo</h5>
+                        <button type="button" id="close-R" hidden class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="inputNameR" class="form-label">UserName</label>
+                                <input type="text" class="form-control" id="inputNameR" required
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputEmailR" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="inputEmailR" required
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-2">
+                                <label for="inputPasswordR" class="form-label">Password</label>
+                                <input type="password" class="form-control" required id="inputPasswordR">
+                            </div>
+                            <p class="text-center mb-0 pb-0">Para fazer login,<a onclick="changeModal('modalRegisto')"
+                                    class="btn btn-link">Clique aqui</a></p>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="registo()">Submeter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid p-0" id="conteudo"> </div>
+
+    </main>
+
+    <!-- Footer -->
+
+
+    <!-- Scripts -->
+    <script src="nmain.js"></script>
+
+</body>
+
+</html>
